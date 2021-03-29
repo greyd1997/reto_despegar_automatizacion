@@ -4,64 +4,78 @@ import java.time.LocalDateTime;
 
 public class Date {
     private LocalDateTime ldt = LocalDateTime.now();
-    private int dia = ldt.getDayOfMonth() + 1;
+    private int dia = ldt.getDayOfMonth() + 3;
     private int mes = ldt.getMonthValue();
     private int anio = ldt.getYear();
 
     public int getDia()
     {
-        return dia;
+        if(dia>31)
+        {
+            setDia(1);
+            return dia;
+        }
+        else
+        {
+            return dia;
+        }
+
+
+    }
+    public int getDiaRegreso()
+    {
+        if(dia>31)
+        {
+            setDia(1);
+            return dia+1;
+        }
+        else
+        {
+            return dia+1;
+        }
+
+
+    }
+
+
+    public void setDia( int dia)
+    {
+        this.dia=dia;
     }
     public int getMes()
     {
+        if(dia>31)
+        {
+            setMes(mes+1);
+        }
         return mes;
+
+    }
+
+    public void setMes(int mes)
+    {
+        this.mes=mes;
     }
     public int getAnio()
     {
+        if(mes>12)
+        {
+            setAnio(anio+1);
+            setMes(1);
+        }
+        else
+        {
+            return anio;
+        }
+
         return anio;
     }
-    public int calculardiaIda()
+
+    public void setAnio(int anio)
     {
-        if(this.getDia()>31)
-        {
-            dia = 1;
-            mes = mes+1;
-        }
-        return dia;
+        this.anio=anio;
     }
-    public int calculardiaRegreso()
-    {
-        int diaRegreso= dia+1;
 
-
-        if(diaRegreso>31)
-        {
-            diaRegreso=1;
-
-        }
-        return diaRegreso;
-    }
-    public int calcularMesIda()
-    {
-        int mesRegreso=mes;
-                if(dia>31)
-                {
-                    mesRegreso=mes+1;
-                }
-
-        return mesRegreso;
-    }
-    public int calcularMesRegreso()
-    {
-        int diaRegreso=dia+1;
-        int mesRegreso=mes;
-        if(dia>31)
-        {
-            mesRegreso=mes+1;
-        }
-
-        return mesRegreso;
-    }
 
 
 

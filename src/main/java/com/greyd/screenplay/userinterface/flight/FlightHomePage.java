@@ -12,7 +12,7 @@ public class FlightHomePage {
     public static final Target DESTINO_FIELD = Target.the("destino").located(By.xpath("//input[@class='input-tag sbox-main-focus sbox-bind-reference-flight-roundtrip-destination-input sbox-secondary sbox-places-second places-inline']"));
     public static final Target DESTINO_CONFIRM = Target.the("origen").located(By.xpath("//em[contains(text(), 'Marta')]"));
     public static final Target OPEN_FECHA_FIELD = Target.the("open fecha").located(By.xpath("//input[@placeholder='Ida']"));
-    public static final Target FECHA_FIELD = Target.the("fecha").located(By.xpath("//span[contains(text(), '"+date.getDia()+"')]"));
+    public static final Target FECHA_FIELD = Target.the("fecha").located(By.xpath("//div[@data-month='"+date.getAnio()+"-0"+date.getMes()+"']/div[@class='_dpmg2--dates']//span[contains(text(), '"+date.getDia()+"')]"));//span[contains(text(), '')));
     public static final Target BUSCAR_BUTTON = Target.the("buscar").located(By.xpath("//em[contains(text(), 'Buscar')]"));
 
 
