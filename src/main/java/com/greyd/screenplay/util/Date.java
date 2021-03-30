@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Date {
     private LocalDateTime ldt = LocalDateTime.now();
-    private int dia = ldt.getDayOfMonth() + 3;
+    private int dia = ldt.getDayOfMonth() + 1;
     private int mes = ldt.getMonthValue();
     private int anio = ldt.getYear();
 
@@ -24,15 +24,30 @@ public class Date {
     }
     public int getDiaRegreso()
     {
-        if(dia>31)
+        if(dia+1>31)
         {
             setDia(1);
-            return dia+1;
+            return dia;
+
         }
         else
         {
             return dia+1;
         }
+
+
+
+
+    }
+    public int getMesRegreso()
+    {
+        if((dia+1)>31)
+        {
+
+            setMes(mes+1);
+        }
+        return mes;
+
 
 
     }
