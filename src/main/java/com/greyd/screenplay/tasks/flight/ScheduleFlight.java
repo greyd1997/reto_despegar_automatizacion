@@ -7,8 +7,6 @@ import net.serenitybdd.screenplay.actions.Clear;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.JavaScriptClick;
-
-import static com.greyd.screenplay.userinterface.flight.FlightFindPage.SELECT_FLIGHT;
 import static com.greyd.screenplay.userinterface.flight.FlightHomePage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -29,9 +27,7 @@ public class ScheduleFlight implements Task {
                 Click.on(DESTINO_CONFIRM),
                 Click.on(OPEN_FECHA_FIELD),
                 Click.on(FECHA_FIELD),
-                Click.on(BUSCAR_BUTTON),
-                Click.on(SELECT_FLIGHT)
-
+                Click.on(BUSCAR_BUTTON)
         );
 
     }

@@ -6,7 +6,6 @@ public class Hotel {
 
     public Hotel(String destino)
     {
-
         this.destino=destino;
     }
 

@@ -2,15 +2,15 @@ package com.greyd.screenplay.stepdefinitions;
 
 import com.greyd.screenplay.model.Flight;
 import com.greyd.screenplay.model.Hotel;
-import com.greyd.screenplay.model.HotelPrice;
+import com.greyd.screenplay.model.Price;
 import com.greyd.screenplay.model.Tourist;
 import com.greyd.screenplay.questions.Flight.TheFinalFlightPage;
 import com.greyd.screenplay.questions.Hotel.TheHotelFinalPage;
+import com.greyd.screenplay.tasks.flight.ChooseCheapestFlight;
 import com.greyd.screenplay.tasks.flight.FillFlightInformation;
 import com.greyd.screenplay.tasks.flight.ScheduleFlight;
 import com.greyd.screenplay.tasks.hotel.BookHotel;
 import com.greyd.screenplay.tasks.hotel.ChooseCheapestHotel;
-import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -38,7 +38,9 @@ public class BookFlightHotelStepDefinitions {
     @When("^Gustavo inputs the data to search and select a flight  to santa marta$")
     public void ScheduleFlight() throws InterruptedException {
         theActorInTheSpotlight().attemptsTo(ScheduleFlight.with(new Flight("medell","santa marta")));
-        Thread.sleep(5000);
+        Thread.sleep(10000);
+        theActorInTheSpotlight().attemptsTo(ChooseCheapestFlight.with(new Price()));
+        Thread.sleep(10000);
         theActorInTheSpotlight().attemptsTo(FillFlightInformation.with(new Tourist("Gustavo","Rey","123456789","calle 123 #32-32","gustavoemail@gmail.com","+57","3002327465")));
         Thread.sleep(5000);
 
@@ -66,7 +68,7 @@ public class BookFlightHotelStepDefinitions {
         Thread.sleep(5000);
         theActorInTheSpotlight().attemptsTo(BookHotel.with(new Hotel("Santa Marta")));
         Thread.sleep(10000);
-        theActorInTheSpotlight().attemptsTo(ChooseCheapestHotel.with(new HotelPrice()));
+        theActorInTheSpotlight().attemptsTo(ChooseCheapestHotel.with(new Price()));
         Thread.sleep(10000);
     }
 

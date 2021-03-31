@@ -19,3 +19,4 @@ public class HotelFindPage {
     public static String precioBarato = listaPrecios.get(posicion).getText();
     public static final Target PRECIO_BARATO = Target.the("precios").located(By.xpath("//span[@class='main-value' and contains(text(), '" + precioBarato + "')]"));
 }
+//span[@class='fare-wrapper -eva-3-p-md']

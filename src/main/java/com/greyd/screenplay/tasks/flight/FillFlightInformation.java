@@ -33,10 +33,10 @@ public class FillFlightInformation implements Task {
                 Enter.theValue(tourist.getName()).into(TRAVELER_NAME),
                 Enter.theValue(tourist.getLastName()).into(TRAVELER_LAST_NAME),
                 Enter.theValue(tourist.getIdNumber()).into(DOCUMENT_TRAVELER_NUMBER),
-                Click.on(SELECT_DAY_PANEL),
-                Click.on(SELECT_MONTH_PANEL ),
-                Click.on(SELECT_YEAR_PANEL),
-                Click.on(SEX_CHECKBOX),
+                //Click.on(SELECT_DAY_PANEL),
+                //Click.on(SELECT_MONTH_PANEL ),
+                //Click.on(SELECT_YEAR_PANEL),
+                //Click.on(SEX_CHECKBOX),
                 Scroll.to(EMAIL_DATA),
                 Enter.theValue(tourist.getEmail()).into(EMAIL),
                 Enter.theValue(tourist.getEmail()).into(CONFIRM_EMAIL),
@@ -44,6 +44,7 @@ public class FillFlightInformation implements Task {
                 Enter.theValue(tourist.getPhoneArea()).into(AREA_NUMBER),
                 Enter.theValue(tourist.getPhoneNumber()).into(CELLPHONE_NUMBER),
                 Click.on(POLICY)
+
         );
 
 
